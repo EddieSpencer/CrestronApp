@@ -20,10 +20,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
  
     // Database Name
-    private static final String DATABASE_NAME = "DB3";
+    private static final String DATABASE_NAME = "DB5";
  
     // Contacts table name
-    private static final String TABLE_SYSTEMS = "SYS4";
+    private static final String TABLE_SYSTEMS = "SYS5";
  
     // Contacts Table Columns names
     private static final String KEY_ID = "_id";
