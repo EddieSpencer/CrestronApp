@@ -11,7 +11,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -91,10 +90,19 @@ public class MainActivity extends Activity {
 					userName = editTextUserName.getText().toString();
 					password = editTextPassword.getText().toString();
 
-					if(currentID == -1)
-						db.addSystem(new SystemInfo(systemName, hostName, ipid, cipPort, webPort, useSSL, userName, password)); 
-					else
-						db.updateSystem(new SystemInfo(currentID,systemName, hostName, ipid, cipPort, webPort, useSSL, userName, password));
+					
+					SystemInfo sys;
+					
+					if(currentID == -1){
+						sys = new SystemInfo(systemName, hostName, ipid, cipPort, webPort, useSSL, userName, password); 
+						db.addSystem(sys);
+					}
+						
+					else{
+						sys = new SystemInfo(currentID,systemName, hostName, ipid, cipPort, webPort, useSSL, userName, password);
+						db.updateSystem(sys);
+					}
+						
 					List<SystemInfo> systems = db.getAllSystems();  
 
 					for (SystemInfo si: systems) {

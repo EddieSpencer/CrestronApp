@@ -26,10 +26,10 @@ public class SystemInfo {
 			int webPort, boolean useSSL, String userName, String password){
 		this._systemName = systemName;
 		this._hostName = hostName;
-		this._ipid = ipid;
-		this._cipPort = cipPort;
-		this._webPort = webPort;
-		this._useSSL = useSSL;
+		setIPID(ipid);
+		setCIPPort(cipPort);
+		setWebPort(webPort);
+		setUseSSL(useSSL);
 		this._userName = userName;
 		this._password = password;
 	}
@@ -39,10 +39,10 @@ public class SystemInfo {
 		this._id = id;
 		this._systemName = systemName;
 		this._hostName = hostName;
-		this._ipid = ipid;
-		this._cipPort = cipPort;
-		this._webPort = webPort;
-		this._useSSL = useSSL;
+		setIPID(ipid);
+		setCIPPort(cipPort);
+		setWebPort(webPort);
+		setUseSSL(useSSL);
 		this._userName = userName;
 		this._password = password;
 	}
