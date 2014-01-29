@@ -1,4 +1,5 @@
-<!--  <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--
+  <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,83 +11,104 @@
 
     
 
-</RelativeLayout>-->
-
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
-    android:layout_width="match_parent" 
-android:layout_height="match_parent" 
-android:orientation="vertical" 
-android:gravity="center_vertical" >
+</RelativeLayout>
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginBottom="20dp"
         android:layout_marginLeft="60dp"
+        android:layout_weight="1"
         android:text="SystemInfo"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <EditText 
-android:id="@+id/editTextSystemName" 
-android:hint="SystemName" 
-android:layout_width="match_parent" 
-android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/editTextSystemName"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="SystemName" />
 
-        <requestFocus /> 
-</EditText>
+    <EditText
+        android:id="@+id/editTextHostName"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="HostName" />
 
-<EditText 
-android:id="@+id/editTextHostName" 
-android:layout_width="fill_parent" 
-android:layout_height="wrap_content" 
-android:hint="HostName" 
-/>
+    <EditText
+        android:id="@+id/editTextIPID"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="IPID" />
 
-    <EditText 
-android:id="@+id/editTextIPID" 
-android:layout_width="fill_parent" 
-android:layout_height="wrap_content" 
-android:hint="IPID" 
-/>
-    <EditText 
-android:id="@+id/editTextCIPPort" 
-android:layout_width="fill_parent" 
-android:layout_height="wrap_content" 
-android:hint="CIPPort" 
-/>
-<EditText 
-android:id="@+id/editTextWebPort" 
-android:layout_width="fill_parent" 
-android:layout_height="wrap_content" 
-android:hint="WebPort" 
-/>
-    <EditText 
-android:id="@+id/editTextUseSSL" 
-android:layout_width="fill_parent" 
-android:layout_height="wrap_content" 
-android:hint="UseSSL" 
-/>
-    <EditText 
-android:id="@+id/editTextUserName" 
-android:layout_width="fill_parent" 
-android:layout_height="wrap_content" 
-android:hint="UserName" 
-/>
-    <EditText 
-android:id="@+id/editTextPassword" 
-android:layout_width="fill_parent" 
-android:layout_height="wrap_content" 
-android:hint="Password" 
-/>
+    <EditText
+        android:id="@+id/editTextCIPPort"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="CIPPort" />
 
-    <Button 
-android:id="@+id/saveButton" 
-android:layout_width="fill_parent" 
-android:layout_height="wrap_content" 
-android:text="Save" 
-android:layout_marginBottom="60dp" />
+    <EditText
+        android:id="@+id/editTextWebPort"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="WebPort" />
+
+    <EditText
+        android:id="@+id/editTextUseSSL"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="UseSSL" />
+
+    <EditText
+        android:id="@+id/editTextUserName"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="UserName" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Password" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="60dp"
+        android:layout_weight="1"
+        android:text="Save" />
+    
+    <TextView
+        android:id="@+id/textViewSystems"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="60dp"
+        android:layout_weight="1"
+        android:text="SystemInfo"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </LinearLayout>
-

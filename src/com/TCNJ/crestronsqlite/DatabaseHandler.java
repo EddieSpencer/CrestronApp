@@ -17,13 +17,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
  
     // All Static variables
     // Database Version
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
  
     // Database Name
-    private static final String DATABASE_NAME = "DB5";
+    private static final String DATABASE_NAME = "newDB";
  
     // Contacts table name
-    private static final String TABLE_SYSTEMS = "SYS5";
+    private static final String TABLE_SYSTEMS = "newTable";
  
     // Contacts Table Columns names
     private static final String KEY_ID = "_id";

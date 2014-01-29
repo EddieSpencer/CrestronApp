@@ -11,7 +11,7 @@ public class SystemInfo {
 	int _ipid; //hex 0x03 - 0xff (03-255)
 	int _cipPort; // (1-65535)
 	int _webPort;
-	boolean _useSSL = true;
+	boolean _useSSL;
 	String _userName;
 	String _password;
 	

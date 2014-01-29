@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -18,6 +19,7 @@ public class MainActivity extends Activity {
 	Button saveButton;
 	EditText editTextSystemName,editTextHostName,editTextIPID, editTextCIPPort;
 	EditText editTextWebPort, editTextUseSSL, editTextUserName, editTextPassword;
+	TextView textViewSystems;
 	DatabaseHandler db = new DatabaseHandler(this);
 	String systemName;
 	String hostName;
@@ -27,14 +29,12 @@ public class MainActivity extends Activity {
 	boolean useSSL;
 	String userName;
 	String password;
+	String systemsTextView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
-		
-
 
 		editTextSystemName = (EditText) findViewById(R.id.editTextSystemName);
 		editTextHostName = (EditText)findViewById(R.id.editTextHostName);
@@ -44,6 +44,7 @@ public class MainActivity extends Activity {
 		editTextUseSSL = (EditText)findViewById(R.id.editTextUseSSL);
 		editTextUserName = (EditText)findViewById(R.id.editTextUserName);
 		editTextPassword = (EditText)findViewById(R.id.editTextPassword);
+		textViewSystems = (TextView)findViewById(R.id.textViewSystems);
 
 		saveButton = (Button)findViewById(R.id.saveButton);
 		saveButton.setOnClickListener(new View.OnClickListener(){
@@ -59,40 +60,34 @@ public class MainActivity extends Activity {
 				useSSL = Boolean.parseBoolean(editTextUseSSL.getText().toString());
 				userName = editTextUserName.getText().toString();
 				password = editTextPassword.getText().toString();
-
-				Log.d("Insert: ", "Inserting .."); 
 				
-				//Textview.setText(string);
-
-				Log.d("SSL", editTextUseSSL.getText().toString());
-
 
 				db.addSystem(new SystemInfo(systemName, hostName, ipid, cipPort, webPort, useSSL, userName, password)); 
-				//db.addSystem(new SystemInfo("TheSystem", "TheHost", 1, 2, 3, true, "spencee", "redd")); 
-
-
-
-				Log.d("Reading: ", "Reading all systems.."); 
-				List<SystemInfo> systems = db.getAllSystems();       
-
+					
+				List<SystemInfo> systems = db.getAllSystems();  
+								
 				for (SystemInfo si: systems) {
 					String log = "SystemName: " + si.getSystemName() + " ," + "HostName: " + si.getHostName() + " ," + "IPID: " + si.getIPID() + " ," + 
 							"CIPPort: " + si.getCIPPort() + " ," + "WebPort: " + si.getWebPort() + " ," + 
 							"UseSSL: " + si.getUseSSL() + " ," + "UserName: " + si.getUserName() + " ," + "Password: " + si.getPassword();
+					
+					String systemsNames = si.getID() + ". " + si.getSystemName();
+					
 					Log.d("Name: ", log);
+					
+					textViewSystems.setText(systemsNames);
 
 				}
+				
 			}
 			
 
 		});
 		
+		
+		
 	}
-
-
-
-
-
+		
 		@Override
 		public boolean onCreateOptionsMenu(Menu menu) {
 			// Inflate the menu; this adds items to the action bar if it is present.
