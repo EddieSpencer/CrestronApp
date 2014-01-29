@@ -71,7 +71,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		values.put(IPID, sysInfo.getIPID());
 		values.put(CIP_PORT, sysInfo.getCIPPort());
 		values.put(WEB_PORT, sysInfo.getWebPort());
-		values.put(USE_SSL, sysInfo.getUseSSL());
+		if(sysInfo.getUseSSL())
+			values.put(USE_SSL, "1");
+		else
+			values.put(USE_SSL,  "0");
+		
 		values.put(USER_NAME, sysInfo.getUserName());
 		values.put(PASSWORD, sysInfo.getPassword());
  
@@ -90,7 +94,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         if (cursor != null)
             cursor.moveToFirst();
  
-        SystemInfo system = new SystemInfo(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), Integer.parseInt(cursor.getString(3)), Integer.parseInt(cursor.getString(4)), Integer.parseInt(cursor.getString(5)), Boolean.parseBoolean(cursor.getString(6)), cursor.getString(7), cursor.getString(8));
+        SystemInfo system = new SystemInfo(Integer.parseInt(cursor.getString(0)), cursor.getString(1), cursor.getString(2), Integer.parseInt(cursor.getString(3)), Integer.parseInt(cursor.getString(4)), Integer.parseInt(cursor.getString(5)), cursor.getString(6).equals("1"), cursor.getString(7), cursor.getString(8));
         // return contact
         return system;
     }
@@ -114,7 +118,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 				sysInfo.setIPID(Integer.parseInt(cursor.getString(3)));
 				sysInfo.setCIPPort(Integer.parseInt(cursor.getString(4)));
 				sysInfo.setWebPort(Integer.parseInt(cursor.getString(5)));
-				sysInfo.setUseSSL(Boolean.parseBoolean(cursor.getString(6)));
+				sysInfo.setUseSSL(cursor.getString(6).equals("1"));
 				sysInfo.setUserName(cursor.getString(7));
 				sysInfo.setPassword(cursor.getString(8));
                 systemList.add(sysInfo);
@@ -135,7 +139,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 		values.put(IPID, sysInfo.getIPID());
 		values.put(CIP_PORT, sysInfo.getCIPPort());
 		values.put(WEB_PORT, sysInfo.getWebPort());
-		values.put(USE_SSL, sysInfo.getUseSSL());
+		if(sysInfo.getUseSSL())
+			values.put(USE_SSL, "1");
+		else
+			values.put(USE_SSL,  "0");
 		values.put(USER_NAME, sysInfo.getUserName());
 		values.put(PASSWORD, sysInfo.getPassword());
  

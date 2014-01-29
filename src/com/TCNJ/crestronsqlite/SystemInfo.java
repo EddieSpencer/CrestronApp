@@ -1,5 +1,7 @@
 package com.TCNJ.crestronsqlite;
 
+import java.security.InvalidParameterException;
+
 
 
 
@@ -76,7 +78,7 @@ public class SystemInfo {
 		if(IPID >= 3 && IPID <= 255)
 			this._ipid = IPID;
 		else
-			this._ipid = 0;
+			throw new InvalidParameterException("IPID between 3 - 255");
 	}
 	
 	public int getCIPPort(){
@@ -87,7 +89,7 @@ public class SystemInfo {
 		if(CIPPort >= 1 && CIPPort <=65535)
 			this._cipPort = CIPPort;
 		else
-			this._cipPort = 0;
+			throw new InvalidParameterException("CIPPort between 1 - 65535");
 	}
 	
 	public int getWebPort(){
